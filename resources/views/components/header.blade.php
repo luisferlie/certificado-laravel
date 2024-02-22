@@ -11,10 +11,11 @@
     @endguest
     @auth
     <div class="space-x-4">
-        <h2 class="text-white text-2xl">{{auth()->user()->name}}</h2>
+        <h2 class="text-white text-2xl">logueado como {{auth()->user()->name}}</h2>
         @csrf
         <form action="logout" method="post">
-            <button class="" type="submit">logout</button>
+            @csrf
+            <button type="submit" class="btn glass text-white mt-2">logout</button>
 
         </form>
     </div>
