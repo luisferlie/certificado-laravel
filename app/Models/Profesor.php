@@ -14,6 +14,8 @@ class Profesor extends Model
         "apellidos",
         "departamento",
         "email",
+        "dni",
+
 
     ];
 }

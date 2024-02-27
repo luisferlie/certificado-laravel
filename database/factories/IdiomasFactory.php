@@ -17,7 +17,7 @@ class IdiomasFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre'=>fake()->name(),
+            'nombre'=>fake()->randomElement(['ingles','frances','español','ruso','chino','aleman']),
         ];
     }
 }
