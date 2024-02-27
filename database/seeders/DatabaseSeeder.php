@@ -6,7 +6,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\AlumnosSeeder;
 use Database\Seeders\AlumnasSeeder;
-use Database\Seeders\ProfesorSeederSeeder;
+use Database\Seeders\ProfesorSeeder;
 
 
 use App\Models\Alumno;

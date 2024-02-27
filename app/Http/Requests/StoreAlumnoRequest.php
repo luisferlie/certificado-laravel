@@ -22,7 +22,9 @@ class StoreAlumnoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'email' => 'required|unique:users|email',
+            'apellidos' => 'required'
+
         ];
     }
 }

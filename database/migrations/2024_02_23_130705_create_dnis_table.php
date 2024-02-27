@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('alumnas', function (Blueprint $table) {
+        Schema::create('dnis', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('apellidos');
-            $table->string('direccion');
-            $table->string('telefono');
-            $table->string('email');
-            $table->foreign('idiomas_id')->references('id')->on('idiomas');
+            $table->string('dni');
+
             $table->timestamps();
         });
     }
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('dnis');
     }
 };

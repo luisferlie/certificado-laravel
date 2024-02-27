@@ -22,7 +22,7 @@ class ProfesorController extends Controller
      */
     public function create()
     {
-        //
+        return view('profesores.create');
     }
 
     /**
@@ -30,8 +30,17 @@ class ProfesorController extends Controller
      */
     public function store(StoreProfesorRequest $request)
     {
-        //
+
+         $valores=$request->input();
+         $profesor=new Profesor($valores);
+         $profesor->save();
+         $profesores=Profesor::all();
+         session()->flash('status',"se ha creado  el profesor $profesor->nombre");
+         session()->flash('message','profesor añadido');
+          //crea variable de session  de un solo uso
+         return view('profesores.profesores-list',['profesores'=>$profesores]);
     }
+
 
     /**
      * Display the specified resource.
@@ -44,26 +53,37 @@ class ProfesorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Profesor $profesor)
+    public function edit(int $id)
     {
-        //
+        $profesor=Profesor::find($id);
+
+        return view('profesores.profesorEdit',["profesor" =>  $profesor]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProfesorRequest $request, Profesor $profesor)
+    public function update(UpdateProfesorRequest $request, int $id)
     {
-        //
+        $profesor=Profesor::find($id);
+        $valores=$request->input();
+        $profesor->update($valores);
+        $profesores= Profesor::all();
+        session()->flash('actualizar','se ha modificado a un profesor');
+
+        return view('profesores.profesores-list',['profesores'=>$profesores]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Profesor $profesor)
+    public function destroy(int $id)
     {
+
+        $profesor=Profesor::find($id);
         $profesor->delete();
         $profesores = Profesor::all();
+        session()->flash('borrar','se ha eliminado a un profesor');
         return view ("profesores.profesores-list",["profesores"=>$profesores]);
     }
 }

@@ -22,7 +22,10 @@ class UpdateProfesorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'email' => 'required|unique:profesores|email',
+            'apellidos' => 'required|min:4',
+            'nombre' => 'required|min:4',
+            'departamento' => 'required'
         ];
     }
 }

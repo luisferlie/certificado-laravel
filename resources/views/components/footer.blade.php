@@ -1,4 +1,4 @@
-<footer class="h-10v bg-footer fixed-bottom">
+<footer class="h-10v bg-footer fixed-bottom z-10">
     <div class="max-h-full footer items-center p-4 bg-neutral text-neutral-content fixed-bottom" >
         <aside class="items-center grid-flow-col">
             <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"

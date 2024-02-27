@@ -20,17 +20,17 @@ Route::view("about", "about");
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main');
 });
 Route::get('/login', function () {
     return view('auth.login');
 });
 Route::get('/alumnoEdit/{id}/edit',[AlumnoController::class,'edit']);
-
+Route::resource("profesores",ProfesorController::class);
 
 
 Route::resource("alumnos",AlumnoController::class);
-Route::resource("profesores",ProfesorController::class);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
