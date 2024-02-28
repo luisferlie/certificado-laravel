@@ -46,3 +46,16 @@ instalamos daisy ui para tener componentes desarrolados en tailwind
 npm i -D daisyui@latest
 plugins: [forms,require("daisyui")], en tailwind.config
 ```
+para paginar y que cargue mi propio css desde vendor/pagination aplico
+```
+php artisan vendor:publish --tag=laravel-pagination
+```
+y modifico alli el css.Por defecto coge tailwind.blade.css.pudiendo copiar alli otras alternativas de otras plantillas de la misma carpeta
+
+### JS
+
+podemos cargar sweet alert para que aparezcan y desaparezcan
+lo instalamos
+```
+npm install sweetalert2
+```

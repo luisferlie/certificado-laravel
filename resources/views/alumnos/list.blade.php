@@ -43,15 +43,18 @@
         </form>
 
         <td>
-            <a href="/alumnos/{{$alumno->id}}/edit"><i class="fa fa-edit text-red-700" aria-hidden="true"></i></a>
+            <a href="{{route("alumnos.alumnoEdit" ,[$alumno->id,'page'=>$page])}}"><i class="fa fa-trash" aria-hidden="true"></i></a>
         </td>
     </tr>
 
     @endforeach
 
 </table >
-
-
+<div class="flex justify-center">
+<div class="bg-green-200 " >
+    {{$alumnos->links()}}
+    </div>
+</div>
 
 
 </x-layouts.layout>

@@ -89,7 +89,11 @@
             });
         }
     </script>
-
+    <div class="flex justify-center  space-x-11">
+        <div class="bg-green-200 mr-52">
+            {{ $profesores->links() }}
+        </div>
+    </div>
 
 
 </x-layouts.layout>

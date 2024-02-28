@@ -13,7 +13,7 @@ class ProfesorController extends Controller
      */
     public function index()
     {
-        $profesores=Profesor::all();
+        $profesores=Profesor::paginate(10);
         return view('profesores.profesores-list',["profesores"=>$profesores]);
     }
 
@@ -82,8 +82,9 @@ class ProfesorController extends Controller
 
         $profesor=Profesor::find($id);
         $profesor->delete();
-        $profesores = Profesor::all();
+        //$profesores = Profesor::all();
         session()->flash('borrar','se ha eliminado a un profesor');
-        return view ("profesores.profesores-list",["profesores"=>$profesores]);
+        // return view ("profesores.profesores-list",["profesores"=>$profesores]);
+        return back();
     }
 }

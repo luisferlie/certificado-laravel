@@ -1,6 +1,7 @@
 <x-layouts.layout>
     <div class="text-3xl text-blue flex justify-center align-items-center pt-9">
-        <form action="/alumnos/{{$alumno->id}}" class="text-3xl text-blue " method="post">
+        <form action="{{route("alumnos.update" ,[$alumno->id,'page'=>$page])}}" method="post"
+            class="space-y-4">
         @csrf
         @method('PUT')
             <x-input-label class="text-3xl text-blue-400 ">Nombre:</x-input-label>

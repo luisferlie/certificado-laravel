@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
 
             AlumnosSeeder::class,
             ProfesorSeeder::class,
-            IdiomaSeeder::class,
 
         ]);
 

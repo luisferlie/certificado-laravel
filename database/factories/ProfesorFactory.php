@@ -11,15 +11,11 @@ class ProfesorFactory extends Factory
 {
 
 
-    private function getDni(){
-
-            $num = rand(0, 99999999);
-            $letras = ["TRWAGMYFPDXBNJZSQVHLCKE"];
-            $numero=fake()->randomNumber(8);
-            $letra =$letras[$numero%23];
-            $dni="$numero-$letra";
-            return $dni;
-        }
+    private function getDNI(): string {
+        $num = rand(0, 99999999);
+        $letraDNI = ["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"];
+        return sprintf("%08d", $num) . $letraDNI[$num%23];
+    }
 
 
 
@@ -34,7 +30,7 @@ class ProfesorFactory extends Factory
             'apellidos'=>fake()->lastName(),
             'departamento'=>fake()->randomElement(['informatica', 'comercio', 'imagen']),
             'email'=>fake()->email(),
-            'dni'=>fake()->$this->getDni();
+            'dni'=>$this->getDni()
 
         ];
     }

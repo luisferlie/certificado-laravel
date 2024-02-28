@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Idiomas>
  */
-class IdiomasFactory extends Factory
+class IdiomaFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class IdiomasFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre'=>fake()->randomElement(['ingles','frances','español','ruso','chino','aleman']),
+
         ];
     }
 }

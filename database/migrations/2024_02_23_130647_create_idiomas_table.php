@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('idiomas', function (Blueprint $table) {
             $table->id();
             $table->string('idioma');
+            $table->foreignId('alumno_id')->references('id')->on('alumnos')->cascadeOnDelete();
+            //$table->foreignId('alumno_Id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
